@@ -1,3 +1,8 @@
+# Installation
+    Initiate new database from python console:
+    - import db
+    - db.init_db()
+
 # db
 Database blueprint to store macroeconomic datapoints
 

@@ -58,14 +58,15 @@ def load():
     """
     bulk = request.get_json()
     if not bulk:
+        abort(400)
         result = []
     try:
         load_data(bulk)
         result = []
     except Exception as e:
-        result = e
+        return e
 
-    return {'result': result}
+    return result
 
 
 @app.route('/api/datapoints', methods=['GET'])
@@ -80,6 +81,11 @@ def get():
     """
     name = request.args.get('name')
     freq = request.args.get('freq')
+
+    if not name or not freq:
+        abort(400)
+        return []
+
     start_date = request.args.get('start_date')
     end_date = request.args.get('end_date')
     try:
@@ -87,7 +93,7 @@ def get():
     except Exception as e:
         result = e
 
-    return {'result': result}
+    return result
 
 
 if __name__ == '__main__':
