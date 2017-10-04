@@ -1,5 +1,6 @@
 Flask
 flask_sqlalchemy
+flask_testing
 requests
 psycopg2
 # SQLAlchemy
