@@ -3,8 +3,10 @@
 
 #### 1. What we are doing (intent):
 
-- Implementation of POST method and GET method as descibed in spec with tests in a flask application.
-- omitting security tokens in POST method
+- Implementation of POST method and GET method as described in spec with tests in a flask application.
+
+Spec: <https://github.com/mini-kep/db/blob/db-views/specification/spec_database.md>
+
 
 #### 2. What is wrong now (problems):
 - we have some code for the app, but testing environment is wrong - the test app shoud be based on sqlite, not postgres.
@@ -20,7 +22,7 @@ postgres will be used as production environment on heroku.
 - [ ] cleaner test design (setup, call, result check separated + test class and nethod naming)
 - [ ] Travis must pass on tests
 - [ ] more standard/conventional approach for the flask app + comment on what desing decision are better
-- [ ] style changes
+- [ ] code style changes
 
 
 ------------------
