@@ -1,4 +1,5 @@
-SQLAlchemy
 Flask
+flask_sqlalchemy
 requests
 psycopg2
+# SQLAlchemy

@@ -5,10 +5,10 @@ from application.views import *
 from application import create_app, init_db
 from application.models import Datapoint, db
 
-import os, json
+import json
 
 
-class TestClientDB(TestCase):
+class Test_ClientDB(TestCase):
     def setUp(self):
         self.app = create_app('testing')
         self.app_context = self.app.app_context()
