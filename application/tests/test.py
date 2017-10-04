@@ -8,14 +8,16 @@ from application.models import Datapoint
 import os, json
 
 
+app = create_app(config_filename='testing')
+
 class TestClientDB(TestCase):
     def setUp(self):
         self.app = create_app('testing')
         self.app_context = self.app.app_context()
         self.app_context.push()
-        db.init_app(app)
+        db.init_app(self.app)
         db.create_all()
-        self.client = app.test_client(use_cookies=True)
+        self.client = self.app.test_client(use_cookies=True)
 
     def tearDown(self):
         db.session.remove()
@@ -71,5 +73,5 @@ class TestClientDB(TestCase):
 
 
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
