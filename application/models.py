@@ -1,22 +1,23 @@
-from sqlalchemy import Column, Integer, String, DateTime, Float, UniqueConstraint
-from db import Base
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 
-class Datapoint(Base):
+class Datapoint(db.Model):
 
     __tablename__ = 'datapoints'
 
     __table_args__ = (
-        UniqueConstraint("freq", "name", "date"),
+        db.UniqueConstraint("freq", "name", "date"),
     )
 
-    id = Column(Integer, nullable=False, 
+    id = db.Column(db.Integer, nullable=False, 
                          unique=True, 
                          autoincrement=True,
                          primary_key=True)
-    freq = Column(String, nullable=False)
-    name = Column(String, nullable=False)
-    date = Column(String, nullable=False)
+    freq = db.Column(db.String, nullable=False)
+    name = db.Column(db.String, nullable=False)
+    date = db.Column(db.String, nullable=False)
 
 
-    value = Column(Float, nullable=False)
+    value =db.Column(db.Float, nullable=False)

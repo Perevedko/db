@@ -1,7 +1,16 @@
 # Installation
+Some instructions to deploy
+    Install posgresql:
+    - sudo apt-get update
+    - sudo apt-get install postgresql postgresql-contrib
+    - sudo -u postgres psql
+    - CREATE DATABASE <dbname>;
+    - CREATE USER <user> WITH PASSWORD '<password>';
+    - GRANT ALL PRIVILEGES ON DATABASE <dbname> TO <user>;
+
     Initiate new database from python console:
-    - import db
-    - db.init_db()
+    - from database import init_db
+    - init_db(name, password, db, host, post) / by default sets DevelopmentConfig
 
 # db
 Database blueprint to store macroeconomic datapoints
